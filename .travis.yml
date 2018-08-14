@@ -1,0 +1,26 @@
+os:
+- linux
+sudo: true
+addons:
+  node_js:
+    - "iojs"
+    - "7"
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - sshpass
+    - g++-4.8
+    - oracle-java8-installer
+    - lib32stdc++6
+    - lib32z1
+
+before_install:
+- ls -la
+before_script:
+- git pull
+
+script:
+
+- sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
+- ls -la
