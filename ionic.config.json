@@ -1,0 +1,7 @@
+{
+  "name": "Bitmex Bot App",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

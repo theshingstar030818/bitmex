@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bitmex Bot</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!auth?.currentUser">
+    <div padding>
+      <ion-segment [(ngModel)]="authenticateSegment">
+        <ion-segment-button value="login">
+          Login
+        </ion-segment-button>
+        <ion-segment-button value="register">
+          Register
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    
+    <div [ngSwitch]="authenticateSegment">
+      <ion-list *ngSwitchCase="'login'">
+        <login></login>
+      </ion-list>
+    
+      <ion-list *ngSwitchCase="'register'">
+        <register></register>
+      </ion-list>
+    </div>
+  </div>
+
+  <div *ngIf="auth?.currentUser">
+    <bitmex-api-key></bitmex-api-key>
+  </div>
+</ion-content>

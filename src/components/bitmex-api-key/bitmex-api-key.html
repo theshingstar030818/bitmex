@@ -1,0 +1,24 @@
+<!-- Generated template for the BitmexApiKeyComponent component -->
+<div>
+  <ion-card>
+    <ion-card-header>
+      Your Bitmex API Key
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary">Bitmex Api Id : </ion-label>
+          <ion-input type="text" placeholder="Enter your bitmex api id" [(ngModel)]="bitmexProvider.bitmexApiId"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label item-start color="primary">Bitmex Api Secret : </ion-label>
+          <ion-input type="{{showSecret ? 'text' : 'password'}}" placeholder="Enter your bitmex api secret" [(ngModel)]="bitmexProvider.bitmexApiSecret"></ion-input>
+          <ion-icon item-end name="{{showSecret ? 'eye-off' : 'eye'}}" (click)="showSecret = !showSecret " ></ion-icon>
+        </ion-item>
+        <ion-item>
+          <button item-end ion-button (click)="bitmexProvider.saveApi()">Save</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</div>

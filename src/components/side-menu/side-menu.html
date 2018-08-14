@@ -1,0 +1,16 @@
+  
+  <ion-list  *ngIf="auth?.currentUser; else loggedOut">
+    <button menuClose ion-item *ngFor="let p of loggedInPages" (click)="openPage(p)">
+      {{p.title}}
+    </button>
+  </ion-list>
+
+  <ng-template #loggedOut>
+    <ion-list >
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ng-template>
+
+  
