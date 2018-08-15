@@ -14,13 +14,16 @@ addons:
     - oracle-java8-installer
     - lib32stdc++6
     - lib32z1
-    
-script:
+
+
+before_script:
 - ls -la
 - npm i -g npm@latest
 - git pull
 - npm install -g ionic cordova
 - npm install 
+
+script:
 - ionic cordova platform add browser
 - ionic cordova build browser --prod
 - sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./platforms/browser/www/* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/

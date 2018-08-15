@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ToastController, LoadingController, Events } from 'ionic-angular';
 // Parse
 import { Parse } from 'parse';
-import { AuthProvider } from '../auth/auth';
 
 /*
   Generated class for the BitmexProvider provider.
@@ -18,7 +17,6 @@ export class BitmexProvider {
   private loader;
 
   constructor(
-    private authProvider: AuthProvider,
     public events: Events,
     public toastCtrl: ToastController,
     public loadingCtrl: LoadingController,
