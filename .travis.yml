@@ -28,3 +28,6 @@ script:
 - ionic cordova build browser --prod
 - sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./platforms/browser/www/* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
 - ls -la
+- ls -la ./platforms
+- ls -la ./platforms/browser
+- ls -la ./platforms/browser/www
