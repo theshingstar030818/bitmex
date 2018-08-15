@@ -26,6 +26,7 @@ before_script:
 script:
 - ionic cordova platform add browser
 - rm -rf node_modules package-lock.json
+- npm install @ionic/app-scripts@latest --save-dev
 - npm install
 - ionic cordova build browser --prod
 - sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./platforms/browser/www/* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
