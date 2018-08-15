@@ -19,10 +19,10 @@ before_install:
 - ls -la
 before_script:
 - git pull
-
-script:
 - npm i npm@latest -g
 - npm install -g ionic cordova
+
+script:
 - npm install 
 - ionic cordova platform add browser
 - ionic cordova build browser --prod
