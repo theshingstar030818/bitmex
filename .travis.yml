@@ -14,15 +14,12 @@ addons:
     - oracle-java8-installer
     - lib32stdc++6
     - lib32z1
-
-before_install:
+    
+script:
 - ls -la
 - npm i -g npm@latest
-before_script:
 - git pull
 - npm install -g ionic cordova
-
-script:
 - npm install 
 - ionic cordova platform add browser
 - ionic cordova build browser --prod
