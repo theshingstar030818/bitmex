@@ -23,6 +23,9 @@ before_script:
 
 script:
 - npm install 
+- npm install --rebuild
+- npm install node-sass --rebuild
+- npm install @ionic/app-scripts@latest --save
 - ionic cordova build browser
 - sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./platforms/browser/www/* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
 - ls -la
