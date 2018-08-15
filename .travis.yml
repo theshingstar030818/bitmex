@@ -19,8 +19,9 @@ before_install:
 - ls -la
 before_script:
 - git pull
+- npm install -g ionic cordova
 
 script:
-
+- npm install 
 - sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
 - ls -la
