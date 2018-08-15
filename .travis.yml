@@ -19,13 +19,14 @@ before_install:
 - ls -la
 before_script:
 - git pull
-- npm install -g ionic cordova
 
 script:
+- npm install -g ionic cordova
 - npm install 
 - npm install --rebuild
 - npm install node-sass --rebuild
 - npm install @ionic/app-scripts@latest --save
+- ionic cordova platform add browser
 - ionic cordova build browser
 - sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./platforms/browser/www/* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
 - ls -la
