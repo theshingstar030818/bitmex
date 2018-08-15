@@ -23,6 +23,6 @@ before_script:
 
 script:
 - npm install 
-- ionic cordova run browser
+- ionic cordova build browser
 - sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./platforms/browser/www/* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
 - ls -la
