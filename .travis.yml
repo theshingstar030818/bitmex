@@ -10,7 +10,11 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - sshpass
-    
+    - g++-4.8
+    - oracle-java8-installer
+    - lib32stdc++6
+    - lib32z1
+
 before_install:
 - ls -la
  - npm i -g npm@latest
