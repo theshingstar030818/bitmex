@@ -7,3 +7,4 @@ npm i -D -E @ionic/app-scripts
 npm install 
 ionic cordova platform add browser 
 ionic cordova build browser
+sshpass -p Turr1.T scp -r -o StrictHostKeyChecking=no ./platforms/browser/www/* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
