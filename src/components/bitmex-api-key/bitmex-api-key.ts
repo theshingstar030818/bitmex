@@ -1,3 +1,4 @@
+import { BitmexProvider } from '../../providers/bitmex/bitmex';
 import { Component } from '@angular/core';
 
 /**
@@ -15,6 +16,7 @@ export class BitmexApiKeyComponent {
   public showSecret: boolean = false
 
   constructor(
+    public bitmexProvider: BitmexProvider
   ) {
 
   }
