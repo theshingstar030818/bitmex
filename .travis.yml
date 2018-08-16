@@ -9,3 +9,6 @@ before_install:
 - docker build -t bitmex-docker:latest .
 - docker run --rm -v $(pwd):/ionicapp -it bitmex-docker:latest buildbrowser
 # - sshpass -p $scpPass scp -r -o StrictHostKeyChecking=no ./platforms/browser/www/* root@pacecouriers.com:/usr/share/nginx/quantumex.ca/
+
+script:
+- bundle exec rake test
