@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd ionicapp
+rm -rf node_modules
+rm -rf package-lock.json
+npm i -D -E @ionic/app-scripts
+npm install 
+ionic cordova platform add browser 
+ionic cordova build browser
