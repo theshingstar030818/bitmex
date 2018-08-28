@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ToastController, LoadingController, Events } from 'ionic-angular';
 // Parse
 import { Parse } from 'parse';
-
+import { BitmexAPI } from "bitmex-node";
 /*
   Generated class for the BitmexProvider provider.
 
@@ -12,9 +12,10 @@ import { Parse } from 'parse';
 @Injectable()
 export class BitmexProvider {
 
-  private bitmexApiId: String = undefined
-  private bitmexApiSecret: String = undefined
+  private bitmexApiId: string = undefined
+  private bitmexApiSecret: string = undefined
   private loader;
+  private bitmex;
 
   constructor(
     public events: Events,
@@ -32,6 +33,22 @@ export class BitmexProvider {
     console.log(this.bitmexApiId);
     console.log(this.bitmexApiSecret);
     console.log(user);
+    this.bitmex = new BitmexAPI({
+      "apiKeyID": "NXTy391NCdhrrSWzsJE_xktb",
+      "apiKeySecret": "bPVQ51-xxI7bRcuAAOlvH0wUFpPvusfmC1dF6zyy4s3v8Mgd",
+      // "testnet": true
+    });
+    console.log(this.bitmex);
+    this.bitmex.Stats.get().then((data)=>{
+      console.log(data)
+    }).catch((error, data)=>{
+      console.log(error)
+    });
+    // this.bitmex.Order.getOrders({"open": true}).then((data) => {
+    //   console.log(data);
+    // }).catch((error, data) => {
+    //   console.log(error)
+    // });
   }
 
   saveApi() {
